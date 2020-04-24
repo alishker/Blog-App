@@ -1,10 +1,11 @@
 # Blog-App
-Requiments
+
+# Requiments
    * python 3.5
    * django 3.0
    
    
-Installation Procedure
+# Installation Procedure
 1. git clone <https://github.com/alishker/Blog-App/new/master?readme=1>
 2. python3 -m venv myvenv
 3. workon myvenv
