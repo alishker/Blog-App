@@ -3,6 +3,10 @@
 # Requiments
    * python 3.5
    * django 3.0
+
+
+ # screenshots
+   
    
    
 # Installation Procedure

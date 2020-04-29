@@ -7,6 +7,26 @@
 .bigbrand{
     font-size: 1.5em;
 }
+.centrestage{
+  margin: auto;
+}
+
+.postdate{
+  text-align: center;
+}
+.posttitle{
+  font-family: 'Russo One', sans-serif;
+  font-size: 1.5em;
+}
+.postcontent{
+  font-family: 'Montserrat';
+  font-size: 1.5em;
+}
+
+.btn-cooment{
+position: absolute;
+right: 0px;
+}
   .loader {
     
     filter:hue-rotate(0deg);
