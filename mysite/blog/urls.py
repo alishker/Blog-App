@@ -16,13 +16,13 @@ from blog.views import (
 
 
 urlpatterns = [
-    path("", postListView.as_view(), name="post"),
+    path("", postListView.as_view(), name="post_list"),
     path("about/$", AboutView.as_view(), name="about"),
     path("posts/<int:pk>/$", postDetailView.as_view(), name="post_detail"),
-    path("posts/new/$", CreatePostView.as_view(), name="create_post"),
-    path("posts/<int:pk>/update$", PostUpdateView.as_view(), name="post_update"),
-    path("posts/<int:pk>/delete$", PostDeleteView.as_view(), name="post_delete"),
-    path("draft/$", DraftListView.as_view(), name="post_draft"),
+    path("posts/new/$", CreatePostView.as_view(), name="post_new"),
+    path("posts/<int:pk>/update$", PostUpdateView.as_view(), name="post_edit"),
+    path("posts/<int:pk>/delete$", PostDeleteView.as_view(), name="post_remove"),
+    path("draft/$", DraftListView.as_view(), name="post_draft_list"),
     path(
         "posts/<int:pk>/comment/$",
         views.add_comment_to_post,

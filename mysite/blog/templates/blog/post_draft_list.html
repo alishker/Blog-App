@@ -1,6 +1,6 @@
 {% extends "blog/base.html" %}
 {% block content%}
-{% for post in posts %}
+{% for post in post_list %}
 <div class="post">
     <p class="date">Created: {{post.Created_date|date:'d-m-Y'}}</p>
     <h1><a href="{% url 'post_detail' pk=post.pk%}">{{post.title}}</a></h1>
