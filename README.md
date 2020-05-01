@@ -11,7 +11,7 @@
    
 # Installation Procedure
 1. git clone <https://github.com/alishker/Blog-App/new/master?readme=1>
-2. python3 -m venv myvenv
+2. python3 -m venv udemyproject
 3. workon myvenv
 4. pip install Django==3.0
 5. python manage.py createsuperuser 
