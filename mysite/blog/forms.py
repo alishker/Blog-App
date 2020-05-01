@@ -3,9 +3,9 @@ from blog.models import Post, Comment
 
 
 class postForm(forms.ModelForm):
-    class meta:
+    class Meta:
         model = Post
-        fields = ("author", "title", "text")
+        fields = ["author", "title", "text"]
         widget = {
             "title": forms.TextInput(attrs={"class": "textinputclass"}),
             "text": forms.Textarea(
@@ -15,9 +15,9 @@ class postForm(forms.ModelForm):
 
 
 class commentsForm(forms.ModelForm):
-    class meta:
+    class Meta:
         model = Comment
-        fields = ("author", "text")
+        fields = ["author", "text"]
 
         widget = {
             "author": forms.TextInput(attrs={"class": "textinputclass"}),

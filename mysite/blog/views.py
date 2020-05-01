@@ -49,7 +49,7 @@ class PostUpdateView(LoginRequiredMixin, UpdateView):
 
 
 class PostDeleteView(LoginRequiredMixin, DeleteView):
-    success_url = reverse_lazy("post_lazy")
+    success_url = reverse_lazy("post_list")
     model = Post
 
 
@@ -59,7 +59,7 @@ class DraftListView(LoginRequiredMixin, ListView):
     model = Post
 
     def get_queryset(self):
-        return post.objects.filter(published_date__isnull=True).order_by(
+        return Post.objects.filter(published_date__isnull=True).order_by(
             "-published_date"
         )
 
@@ -80,16 +80,16 @@ def add_comment_to_post(request, pk):
 
     if request.method == "POST":
         form = commentsForm(request.POST)
-        if form_isvalid():
+        if form.is_valid():
             comment = form.save(commit=False)
             comment.Post = post
             comment.save()
             return redirect("post_detail", pk=post.pk)
 
-        else:
-            form = commentsForm()
+    else:
+        form = commentsForm()
 
-        return render(request, "blog/comment_form.html", {"form": form})
+    return render(request, "blog/comment_form.html", {"form": form})
 
 
 @login_required
